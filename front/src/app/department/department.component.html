@@ -1,0 +1,46 @@
+<mat-card fxFlex>
+  <mat-card-title>
+    Lista de compras
+  </mat-card-title>
+
+  <mat-card-content>
+    <div fxLayout="column" fxLayoutAlign="space-between">
+      <mat-form-field>
+        <input matInput [(ngModel)]="depProduct" (keyup.enter)="save()">
+        <mat-hint>Nome do produto</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="depName" (keyup.enter)="save()">
+        <mat-hint>Departamento do produto</mat-hint>
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="end end">
+        <button mat-button color="primary" (click)="save()">Salvar</button>
+        <button mat-button color="warn" (click)="cancel()">Cancelar</button>
+      </div>
+    </div>
+
+    <mat-list>
+      <h3 mat-subheader>Listagem</h3>
+      <mat-list-item *ngFor="let dep of departments">
+        <div id="produtos">
+          <div id="nomeProduto">
+            <h3 mat-line>{{dep.product}}</h3>
+          </div>
+          <div id="nomeDepartamento">
+            <h5 mat-line>{{dep.name}}</h5>
+          </div>
+        </div>
+        <div id="btn">
+        
+        <button mat-icon-button color="accent" (click)="delete(dep)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="edit(dep)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+      
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

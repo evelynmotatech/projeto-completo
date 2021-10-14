@@ -1,0 +1,16 @@
+mat-card{
+  min-width: 600px;
+}
+
+#produtos{
+  display: flex;
+  width: 400px;
+}
+
+#nomeProduto, #nomeDepartamento{
+width: 200px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
